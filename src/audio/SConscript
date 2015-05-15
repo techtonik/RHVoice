@@ -18,7 +18,7 @@ import os
 
 Import("env","libRHVoice_core")
 local_env=env.Clone()
-local_env["libversion"]="0.0.0"
+local_env["SHLIBVERSION"]="0.0.0"
 local_env["liblevel"]=1
 src=["audio.cpp"]
 if "libao" in local_env["audio_libs"]:
