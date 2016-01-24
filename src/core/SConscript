@@ -19,7 +19,7 @@ import os.path
 
 Import("env","libsonic","libhts_engine","libmage")
 local_env=env.Clone()
-local_env["libversion"]="0.0.0"
+local_env["SHLIBVERSION"]="0.0.0"
 local_env["liblevel"]=1
 local_env.Append(CPPDEFINES=("DATA_PATH",r'\"data\"' if local_env["PLATFORM"]=="win32" else local_env.subst(r'\"$datadir/$package_name\"')))
 local_env.Append(CPPDEFINES=("CONFIG_PATH",r'\"config\"' if local_env["PLATFORM"]=="win32" else local_env.subst(r'\"$sysconfdir/$package_name\"')))

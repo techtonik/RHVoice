@@ -155,8 +155,6 @@ def create_base_env(vars):
     if "gcc" in env["TOOLS"]:
         env.MergeFlags("-pthread")
         env.AppendUnique(CXXFLAGS=["-std=c++03"])
-    if sys.platform.startswith("linux"):
-        env.Append(SHLINKFLAGS="-Wl,-soname,${TARGET.file}.${libversion.split('.')[0]}")
     return env
 
 def display_help(env,vars):
